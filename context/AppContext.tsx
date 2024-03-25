@@ -4,7 +4,7 @@ import React, { createContext, useState } from "react";
 
 export type CatContextValue = {
   catData: CatImage | null; // Data to store
-  setCatData: (data: CatImage | null) => void; // Function to update the data
+  setCatData: (data: CatImage | string | null) => void; // Function to update the data
 };
 
 const CatContext = createContext<CatContextValue>({

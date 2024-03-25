@@ -1,8 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import CatSearch from "@/components/CatSearch";
 
-const Navbar: React.FC = () => {
+export default function Navbar() {
   return (
     <nav className="bg-slate-600">
       <div className="container w-3/4 mx-auto py-2 flex justify-between items-center">
@@ -16,5 +16,3 @@ const Navbar: React.FC = () => {
     </nav>
   );
 };
-
-export default Navbar;

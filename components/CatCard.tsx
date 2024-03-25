@@ -21,7 +21,7 @@ export default function CatCard({
   const closePopup = () => setShowPopup(false);
 
   return (
-    <div className="flex flex-col rounded-xl bg-slate-100">
+    <div className="flex flex-col rounded-xl">
       <div className="">
         <Image
           src={image?.url}

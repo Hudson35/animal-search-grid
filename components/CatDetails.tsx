@@ -15,7 +15,7 @@ export default function CatDetails({
 
   return (
     <div className={`popup ${isOpen ? "active" : ""}`}>
-      <div className="pb-4">
+      <div className="pb-4 px-2">
         <div className="flex justify-between items-center pb-2">
           <h2 className="text-xl font-bold">Details</h2>
         </div>

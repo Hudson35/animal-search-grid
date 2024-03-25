@@ -38,7 +38,6 @@ export default function CatSearch() {
         "Returned data from API_GET_BREEDS_SEARCH_URL endpoint:",
         data
       );
-      // console.log("Returned data-breeds:", breeds);
 
       // Get specific cat breed image based on reference_image_id field from above endpoint
       try {
@@ -55,6 +54,9 @@ export default function CatSearch() {
 
         // Update context with fetched data
         setCatData(image);
+
+        // set it in local storage
+        localStorage.setItem("catData", JSON.stringify(image));
 
         console.log(
           "Returned data from API_GET_IMAGE_BY_ID_URL endpoint:",
@@ -80,14 +82,12 @@ export default function CatSearch() {
 
   function handleSearchTerm(e: React.ChangeEvent<HTMLInputElement>) {
     setSearch(e.target.value);
-    // console.log({ search });
   }
 
   async function handleSearchTermSubmit(
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) {
     e.preventDefault();
-    // console.log("search term submitted:", search);
     fetchBreeds();
 
     // push to the specific searched cat breed page
@@ -98,7 +98,7 @@ export default function CatSearch() {
     <div className="relative flex items-center">
       <button
         onClick={handleSearchTermSubmit}
-        className="absolute left-0 p-3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
+        className="absolute left-0 p-3"
       >
         <svg
           className="h-5 w-5 text-gray-500"
